@@ -8,14 +8,8 @@
 			<th>Yazar</th>
 		</tr>
 	</thead>
+
+	<%= render @posts %>
 	
-	<tbody>
-		<% @posts.each do |p| %>
-			<tr>
-				<td><%= link_to p.title, p %></td>
-				<td><%= link_to p.category.name, p.category %></td>
-				<td><%= link_to 'Yiğit Sadıç' %></td>
-			</tr>
-		<% end %>	
-	</tbody>
 </table>
+
