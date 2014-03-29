@@ -1,0 +1,20 @@
+<% if @posts.empty? %>
+	<h1>
+		Sonuç bulunamadı!
+	</h1>
+	<%= link_to 'Anasayfaya dönmek için tık', root_url %>
+<% else %>
+	<h1>
+		Bulunan sonuçlar
+	</h1>
+	
+	<ul>
+		<% @posts.each do |p| %>
+			<li>
+				<%= link_to p.title, p %>
+				-
+				<%= link_to p.category.name, p.category %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>

@@ -1,9 +1,8 @@
 Ozgurblog::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  
-  resources :categories
-  resources :users
-  resources :posts
-  
+
+  get 'posts/search', to: 'posts#search', as: 'search'
+
+  resources :categories, :users, :posts
   root 'posts#index'
 end
