@@ -1,11 +1,15 @@
 <h1><%= @category.name%></h1>
 
-<ul>
-	<% @category.post.each do |p| %>
-		<li>
-			<%= link_to p.title, p %>
-		</li>
-	<% end %>
-</ul>
+<table>
+	<thead>
+		<tr>
+			<th width="700">Başlık</th>
+			<th width="150">Kategori</th>
+			<th>Yazar</th>
+		</tr>
+	</thead>
 
-<%= link_to 'Geri', categories_path %>
+	<%= render @category.post %>
+	
+</table>
+<%= link_to 'Kategoriler', categories_path %>

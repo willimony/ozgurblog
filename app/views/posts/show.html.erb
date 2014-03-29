@@ -1,7 +1,12 @@
 <div class="panel">
 	<h1><%= @post.title %></h1>
 	<h4><%= link_to @post.category.name, @post.category %></h4>
+	
 	<p>
 		<%= @post.content %>
+		
+		<hr />
+		<%= link_to(image_tag(@post.user.profile_pic_url, class: 'th', size: '128x128'), @post.user) %>
+		<h3><%= @post.user.name %></h3>
 	</p>
 </div>
