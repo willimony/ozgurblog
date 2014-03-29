@@ -1,9 +1,23 @@
 <h1>Kategoriler</h1>
 
-<ul>
-	<% @categories.each do |c| %>
-		<li>
-			<%= link_to c.name, c %>
-		</li>
-	<% end %>
-</ul>
+<table>
+	<thead>
+		<tr>
+			<th width="700">Kategori</th>
+			<th width="100">Yazı sayısı</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<% @categories.each do |c| %>
+			<tr>
+				<td>
+					<%= link_to c.name, c %>	
+				</td>
+				<td>
+					<%= c.post.count %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

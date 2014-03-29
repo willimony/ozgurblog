@@ -1,0 +1,37 @@
+<nav class="top-bar">
+	<ul class="title-area">
+		<li class="name">
+			<h1><%= link_to 'Özgür Duvar', root_url %></h1>
+		</li>
+	</ul>
+
+	<section class="top-bar-section">
+		<ul class="right">
+			<li class="has-form">
+				<form method="GET" action="<%= search_path %>">
+					<div class="row collapse">
+						<div class="large-8 small-9 columns">
+							<input name="q" type="text" placeholder="Ara, oku, sorgula">
+						</div>
+						<div class="large-4 small-3 columns">
+							<a href="#" class="alert button expand">Ara</a>
+						</div>
+					</div>
+			</li></form>
+			<li class="divider"></li>
+			<li>
+				<%= link_to 'Yazılar', posts_path %>
+			</li>
+			<li class="divider">
+				>
+			</li>
+			<li>
+				<%= link_to 'Kategoriler', categories_path %>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<%= link_to 'Nedir?' %>
+			</li>
+		</ul>
+	</section>
+</nav>
