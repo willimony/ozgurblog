@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  views:
+    pagination:
+      first: "&laquo; İlk"
+      last: "Son &raquo;"
+      
+      previous: "Geri"
+      next: "İleri"
+      
+      truncate: "&hellip;"

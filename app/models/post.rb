@@ -7,4 +7,5 @@ class Post < ActiveRecord::Base
   def get_published_posts
   end
   
+  paginates_per 1
 end
