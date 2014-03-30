@@ -1,5 +1,4 @@
 Ozgurblog::Application.routes.draw do  
-  devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
     
   get "/about"       => 'main#about', as: 'about'
@@ -8,6 +7,7 @@ Ozgurblog::Application.routes.draw do
   get 'posts/search' => 'posts#search', as: 'search'
 
   resources :categories, :posts
+  devise_for :users
   
   root 'posts#index'
 end

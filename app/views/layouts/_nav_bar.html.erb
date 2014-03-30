@@ -29,10 +29,10 @@
 			<li class="divider"></li>
 			<% if user_signed_in? %>
 				<li><%= link_to current_user.email %></li>
-				<li><%= link_to 'Çıkış yap' %></li>
+				<li><%= link_to 'Çıkış yap', destroy_user_session_path, method: :delete %></li>
 			<% else %>
-				<li><%= link_to 'Giriş yap'%></li>
-				<li><%= link_to 'Kayıt ol'%></li>
+				<li><%= link_to 'Giriş yap', new_user_session_path %></li>
+				<li><%= link_to 'Kayıt ol',  new_user_registration_path %></li>
 			<% end %>
 		</ul>
 	</section>
