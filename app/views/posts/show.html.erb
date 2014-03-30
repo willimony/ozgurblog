@@ -6,7 +6,7 @@
 		<%= @post.content %>
 		
 		<hr />
-		<%= link_to(image_tag(@post.user.profile_pic_url, class: 'th', size: '128x128'), @post.user) %>
+		<%= link_to(image_tag(@post.user.profile_pic_url, class: 'th', size: '128x128')) %>
 		<h3><%= @post.user.name %></h3>
 	</p>
 </div>
