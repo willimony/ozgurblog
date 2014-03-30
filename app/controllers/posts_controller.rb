@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by_slug_and_published(params[:id], true)
+    puts @post
   end
   
   def search

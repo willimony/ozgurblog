@@ -1,4 +1,4 @@
-ActiveAdmin.register Post do
+ActiveAdmin.register User do
 
   
   # See permitted parameters documentation:
@@ -8,10 +8,10 @@ ActiveAdmin.register Post do
   #
   # or
   #
-  permit_params do
-    permitted = [:title, :content, :published]
+  # permit_params do
+  #  permitted = [:permitted, :attributes]
   #  permitted << :other if resource.something?
   #  permitted
-  end
+  # end
   
 end

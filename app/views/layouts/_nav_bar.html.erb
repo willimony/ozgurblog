@@ -8,7 +8,7 @@
 	<section class="top-bar-section">
 		<ul class="right">
 			<li class="has-form">
-				<form method="GET" action="<%= search_posts_path %>">
+				<form method="GET" action="<%= search_path %>">
 					<div class="row collapse">
 						<div class="large-8 small-9 columns">
 							<input name="q" type="text" placeholder="Ara && oku">
@@ -27,11 +27,13 @@
 			<li class="divider"></li>
 			<li><%= link_to 'İletişim', contact_path %></li>
 			<li class="divider"></li>
-			<li><%= link_to 'yigitsadic@gmail.com' %></li>
-			<li><%= link_to 'Çıkış yap' %></li>
-			
-			<li><%= link_to 'Giriş yap' %></li>
-			<li><%= link_to 'Kayıt ol' %></li>
+			<% if current_user %>
+				<li><%= link_to current_user.username %></li>
+				<li><%= link_to 'Çıkış yap', logout_path %></li>
+			<% else %>
+				<li><%= link_to 'Giriş yap', login_path %></li>
+				<li><%= link_to 'Kayıt ol', sign_up_path %></li>
+			<% end %>
 		</ul>
 	</section>
 </nav>

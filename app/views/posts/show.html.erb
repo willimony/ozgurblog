@@ -3,7 +3,7 @@
 	<h4><%= link_to @post.category.name, @post.category %></h4>
 	
 	<p>
-		<%= @post.content %>
+		<%= raw @post.content %>
 		
 		<hr />
 		
