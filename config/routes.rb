@@ -1,11 +1,12 @@
-Ozgurblog::Application.routes.draw do
-  get "/about", to: 'main#about', as: 'about'
-  get "/contact", to: 'main#contact', as: 'contact'
-  
+Ozgurblog::Application.routes.draw do  
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+    
+  get "/about"       => 'main#about', as: 'about'
+  get "/contact"     => 'main#contact', as: 'contact'
+  
+  get 'posts/search' => 'posts#search', as: 'search'
 
-  get 'posts/search', to: 'posts#search', as: 'search'
-
-  resources :categories, :users, :posts
+  resources :categories, :posts
+  
   root 'posts#index'
 end
