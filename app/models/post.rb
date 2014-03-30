@@ -2,10 +2,10 @@ class Post < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   
-  validates :title, :content, :user_id, :category_id, presence: true
+  validates :title, presence: true,uniqueness: true 
+  validates :content, :user_id, :category_id, presence: true
   
-  def get_published_posts
-  end
-  
-  paginates_per 1
+  default_scope order: 'created_at DESC'
+
+  paginates_per 10
 end
