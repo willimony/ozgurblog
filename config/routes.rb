@@ -4,7 +4,7 @@ Ozgurblog::Application.routes.draw do
   
 #  get "/about"       => 'main#about', as: 'about'
 #  get "/contact"     => 'main#contact', as: 'contact'
-#  get 'search' => 'posts#search', as: 'search'
+  get 'search' => 'posts#search', as: 'search'
     
 #  scope '/users' do
 #    get '/login' => 'sessions#new', as: 'login'
