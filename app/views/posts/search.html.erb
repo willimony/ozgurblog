@@ -1,24 +1,7 @@
 <% if @posts.empty? %>
-	<h1>
-		Sonuç bulunamadı!
-	</h1>
-	<%= link_to 'Anasayfaya dönmek için tık', root_url %>
+	<h1>Sonuç bulunamadı!</h1>
 <% else %>
-	<h1>
-		Bulunan sonuçlar
-	</h1>
+	<h1>Bulunan sonuçlar</h1>
 	
-	<table>
-		<thead>
-			<tr>
-				<th width="700">Başlık</th>
-				<th width="150">Kategori</th>
-				<th>Yazar</th>
-			</tr>
-		</thead>
-
-		<%= render @posts %>
-	</table>
-	
-	<%= paginate @posts %>
+	<%= render 'list_posts' %>
 <% end %>

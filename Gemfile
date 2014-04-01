@@ -18,7 +18,7 @@ gem 'tinymce-rails'
 
 #gem 'sorcery', '~> 0.8.5'
 
-# gem 'sqlite3'
+#gem 'sqlite3'
 
 
 group :doc do

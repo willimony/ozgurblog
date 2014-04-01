@@ -28,11 +28,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Özgür Duvar</a>
-          <a class="blog-nav-item" href="#">Kategoriler</a>
-          <a class="blog-nav-item" href="#">Yazarlar</a>
-          <a class="blog-nav-item" href="#">İletişim</a>
-          <a class="blog-nav-item" href="#">Hakkında</a>
+			<%= render 'layouts/nav_bar_links' %>
         </nav>
       </div>
     </div>
@@ -54,7 +50,11 @@
           <div class="sidebar-module sidebar-module-inset">
             <h4>Duvar'da ara...</h4>
             <p>
-            	<input type="text">
+            	<%= form_tag(search_path, method: :get, role: :form) do %>
+            		<div class="form-group">
+            			<%= search_field_tag :q, nil, placeholder: 'Ara', class: 'form-control' %>
+            		</div>
+            	<% end %>
             </p>
           </div>
           <div class="sidebar-module">
@@ -90,9 +90,6 @@
 
     <div class="blog-footer">
       <p><i>Özgür Duvar!</i> bir özgür yazılımdır. Daha fazlası için <a href="#">@yigitsadic</a></p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
     </div>
     
 	<%= javascript_include_tag "application" %>

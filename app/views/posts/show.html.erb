@@ -1,11 +1,21 @@
-<div class="panel">
-	<h1><%= @post.title %></h1>
-	<h4><%= link_to @post.category.name, @post.category %></h4>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3>
+			<%= link_to @post.category.name, @post.category %>
+			/
+			<%= link_to @post.title, @post %>
+		</h3>		
+	</div>
 	
-	<p><%= raw @post.content %></p>
+	<div class="panel-body">
+		<%= raw @post.content %>
+	</div>
 	
-	<hr />
-	<h5>
-		<%= @post.admin_user.username %>
-	</h5>
+	<div class="panel-footer">
+		<p class="text-right">
+			<em>
+				<%= link_to(@post.admin_user.username, author_path(@post.admin_user)) %>
+			</em>
+		</p>
+	</div>
 </div>
