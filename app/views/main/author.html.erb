@@ -1,0 +1,20 @@
+<h1><%= @author.username %></h1>
+<h3>Yazıları...</h3>
+<div class="panel">
+	İletişim için <%= mail_to @author.email %>
+</div>
+
+<table>
+	<thead>
+		<tr>
+			<th width="700">Başlık</th>
+			<th width="150">Kategori</th>
+		</tr>
+	</thead>
+
+	<%= render @posts %>
+	
+</table>
+<br />
+
+<%= paginate @posts %>

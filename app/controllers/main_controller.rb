@@ -4,4 +4,9 @@ class MainController < ApplicationController
 
   def contact
   end
+  
+  def author
+    @author = AdminUser.find(params[:id])
+    @posts = @author.posts.page params[:page]
+  end
 end

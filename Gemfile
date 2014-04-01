@@ -12,8 +12,10 @@ gem 'jbuilder', '~> 1.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'friendly_id', '~> 5.0.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
-#gem 'sorcery', '~> 0.8.5'
 gem 'tinymce-rails'
+
+#gem 'sorcery', '~> 0.8.5'
+
 
 #gem 'sqlite3'
 
