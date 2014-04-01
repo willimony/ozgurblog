@@ -43,6 +43,13 @@
       <div class="row">
 
         <div class="col-sm-8 blog-main">
+        	<% if notice %>
+			<div class="alert alert-success">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				
+				<%= notice %>
+			</div>
+			<% end %>
 		  <%= yield %>
         </div>
 
@@ -73,7 +80,7 @@
     </div><!-- /.container -->
 
     <div class="blog-footer">
-      <p><i>Özgür Duvar!</i> bir özgür yazılımdır. Daha fazlası için <%= link_to 'iletişim', contact_path %></p>
+      <p><i>Özgür Duvar!</i> bir özgür yazılımdır. Daha fazlası için <%= link_to 'iletişim', new_message_path %></p>
     </div>
     
 	<%= javascript_include_tag "application" %>

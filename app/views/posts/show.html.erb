@@ -1,10 +1,13 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3>
-			<%= link_to @post.category.name, @post.category %>
-			/
-			<%= link_to @post.title, @post %>
-		</h3>		
+		<ol class="breadcrumb">
+			<li>
+				<%= link_to @post.category.name, @post.category %>	
+			</li>
+			<li class="active">
+				<%= link_to @post.title, @post %>	
+			</li>
+		</ol>
 	</div>
 	
 	<div class="panel-body">
