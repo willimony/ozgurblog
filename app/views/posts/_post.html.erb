@@ -2,5 +2,6 @@
 	<tr>
 		<td><%= link_to post.title, post %></td>
 		<td><%= link_to post.category.name, post.category %></td>
+		<td><%= post.admin_user.username %></td>
 	</tr>
 </tbody>

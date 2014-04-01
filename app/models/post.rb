@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   
   
   belongs_to :category
+  belongs_to :admin_user
   
   validates :title, presence: true, uniqueness: true 
   validates :content, :category_id, presence: true

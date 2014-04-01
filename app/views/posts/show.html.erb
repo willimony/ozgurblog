@@ -3,4 +3,9 @@
 	<h4><%= link_to @post.category.name, @post.category %></h4>
 	
 	<p><%= raw @post.content %></p>
+	
+	<hr />
+	<h5>
+		<%= @post.admin_user.username %>
+	</h5>
 </div>
