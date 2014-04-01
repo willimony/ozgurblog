@@ -7,7 +7,7 @@ ActiveAdmin.register Post do
   # or
   #
   permit_params do
-    permitted = [:title, :content, :published]
+    permitted = [:title, :content, :published, :category_id, :admin_user_id]
   #  permitted << :other if resource.something?
   #  permitted
   end
