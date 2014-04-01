@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  before_save :remove_html_tags
+  
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders]
   
@@ -13,4 +15,10 @@ class Post < ActiveRecord::Base
   scope :published, -> { where(published: :t) }
 
   paginates_per 10
+  
+  
+  private
+  def remove_html_tags
+    self.content = HTML::FullSanitizer.new.sanitize(self.content)
+  end
 end
