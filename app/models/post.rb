@@ -7,11 +7,13 @@ class Post < ActiveRecord::Base
   belongs_to :admin_user
   
   validates :title, presence: true, uniqueness: true 
-  validates :content, :category_id, presence: true
+  validates :content, :category_id, :admin_user_id, presence: true
   
   default_scope {
     order('created_at desc')
   }
+  
+  scope :published, -> { where(published: :t) }
 
   paginates_per 10
 end
