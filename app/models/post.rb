@@ -9,10 +9,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true 
   validates :content, :category_id, :admin_user_id, presence: true
   
-  default_scope {
-    order('created_at desc')
-  }
-  
+  default_scope { order('created_at desc') }
   scope :published, -> { where(published: :t) }
 
   paginates_per 10

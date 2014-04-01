@@ -1,16 +1,3 @@
 <h1><%= @category.name %></h1>
 
-<table>
-	<thead>
-		<tr>
-			<th width="700">Başlık</th>
-			<th width="150">Kategori</th>
-			<th>Yazar</th>
-		</tr>
-	</thead>
-
-	<%= render @posts %>
-	
-</table>
-
-<%= paginate @posts %>
+<%= render 'posts/list_posts' %>
