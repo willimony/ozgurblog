@@ -12,6 +12,8 @@
 	</div>
 	
 	<div class="panel-footer">
+		<%= render 'layouts/fb_sharer' %>
+		
 		<p class="text-right">
 			<em>
 				<%= link_to(@post.admin_user.username, author_path(@post.admin_user)) %>
