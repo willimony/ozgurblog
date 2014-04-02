@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402221251) do
+ActiveRecord::Schema.define(version: 20140402233007) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -62,18 +62,7 @@ ActiveRecord::Schema.define(version: 20140402221251) do
     t.datetime "updated_at"
   end
 
-  create_table "posts", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "category_id"
-    t.boolean  "published",     default: false
-    t.string   "slug"
-    t.integer  "admin_user_id"
-  end
-
-  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
-  add_index "posts", ["title"], name: "index_posts_on_title", unique: true
+# Could not dump table "posts" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
