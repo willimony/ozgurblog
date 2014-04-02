@@ -5,4 +5,10 @@ class AdminUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :posts
+  
+
+  validates :image_url, allow_blank: true, format: {
+    with: %r{\.(gif|jpg|png)\Z}i,
+    message: "girilen URL'nin uzantısı GIF, JPG veya PNG olmalı."
+  }
 end
