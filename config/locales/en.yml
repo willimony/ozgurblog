@@ -12,3 +12,16 @@ en:
       next: "İleri"
       
       truncate: "&hellip;"
+      
+  activerecord:
+    errors:
+      messages:
+        blank: 'alanı boş bırakılamaz'
+    models:
+      message: 'Mesaj'
+    attributes:
+      message:
+        title: 'Başlık'
+        content: 'Mesaj'
+        email: 'Email'
+    

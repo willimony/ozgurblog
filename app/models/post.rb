@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
   default_scope { order('created_at desc') }
   scope :published, -> { where(published: :t) }
 
-  paginates_per 10
+  paginates_per 8
   
   
   private
