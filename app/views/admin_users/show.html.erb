@@ -1,6 +1,12 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3><em><%= @author.username %></em> kullanıcısının yazıları</h3>		
+		<%= image_tag(@author.image_url, size: "180x180") %>
+		<h3>
+			<em><%= @author.username %></em>
+			kullanıcısının
+			<span class="label label-success"><%= @author.posts.published.count %></span>
+			adet yazısı bulunmakta.
+		</h3>		
 	</div>
 	
 	<div class="panel-body">
