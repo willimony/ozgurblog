@@ -16,7 +16,7 @@ ActiveAdmin.register AdminUser do
   filter :created_at
 
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs "Kullanıcı Detayları" do
       f.input :email
       f.input :image_url
       f.input :username

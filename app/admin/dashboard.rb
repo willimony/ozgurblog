@@ -7,12 +7,12 @@ ActiveAdmin.register_page "Dashboard" do
        column do
          panel "Gelen Mesajlar" do
            table_for Message.limit(10) do
-             column :title do |message|
+             column 'Başlık', :title do |message|
                link_to message.title, admin_message_path(message)
              end
              
              column :email
-             column :created_at
+             column 'Oluşturulma tarihi', :created_at
              
            end
            

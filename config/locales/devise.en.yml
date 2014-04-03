@@ -7,12 +7,12 @@ en:
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid email or password."
-      locked: "Your account is locked."
+      already_authenticated: "Hali hazırda giriş yapmışsınız."
+      inactive: "Hesabınız aktif değil."
+      invalid: "Email adresi ile parola uyuşmuyor."
+      locked: "Hesabınız kilitlenmiştir."
       last_attempt: "You have one more attempt before your account will be locked."
-      not_found_in_database: "Invalid email or password."
+      not_found_in_database: "Email adresi ile parola uyuşmuyor."
       timeout: "Your session expired. Please sign in again to continue."
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your account before continuing."
@@ -42,7 +42,7 @@ en:
       updated: "You updated your account successfully."
     sessions:
       signed_in: "Başarı ile giriş yapıldı."
-      signed_out: "Signed out successfully."
+      signed_out: "Başarı ile çıkış yapıldı."
     unlocks:
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
