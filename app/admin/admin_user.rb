@@ -3,15 +3,14 @@ ActiveAdmin.register AdminUser do
 
   index do
     selectable_column
-    id_column
     column :email
-    column :current_sign_in_at
-    column :sign_in_count
+    column :username
     column :created_at
     actions
   end
 
   filter :email
+  filter :username
   filter :current_sign_in_at
   filter :sign_in_count
   filter :created_at
@@ -39,5 +38,4 @@ ActiveAdmin.register AdminUser do
       object.send :update_attributes, *attributes
     end
   end
-  
 end

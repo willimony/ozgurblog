@@ -1,7 +1,7 @@
 Ozgurblog::Application.routes.draw do
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  
   get '/about' => 'main#about', as: 'about'
   get '/author/:id' => 'admin_users#show', as: 'admin_user'
   get 'search' => 'posts#search', as: 'search'
