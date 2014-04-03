@@ -16,6 +16,9 @@ class Post < ActiveRecord::Base
 
   paginates_per 8
   
+  def self.search q
+    self.where("title like ? or content like ?", "%#{q}%", "%#{q}%")
+  end
   
   private
   def remove_html_tags

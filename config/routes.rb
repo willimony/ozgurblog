@@ -9,6 +9,6 @@ Ozgurblog::Application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :posts, only: [:index, :show]
   resources :messages, only: [:new, :create]
-
+  
   root 'posts#index'
 end

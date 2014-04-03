@@ -8,6 +8,6 @@ class PostsController < ApplicationController
   end
   
   def search
-    @posts = Post.published.where("title like ? or content like ?", "%#{params[:q]}%", "%#{params[:q]}%").page params[:page]
+    @posts = Post.published.search(params[:q]).page params[:page]
   end
 end
