@@ -5,6 +5,10 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc{ I18n.t("active_admin.dashboard") } do
      columns do
        column do
+         strong { link_to 'Yazılarda kalın, italic ve diğerleri için ->', 'http://redcloth.org/' }
+       end
+       
+       column do
          panel "Gelen Mesajlar" do
            table_for Message.limit(10) do
              column 'Başlık', :title do |message|

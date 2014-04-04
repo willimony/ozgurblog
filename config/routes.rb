@@ -5,6 +5,7 @@ Ozgurblog::Application.routes.draw do
   get '/about' => 'main#about', as: 'about'
   get '/author/:id' => 'admin_users#show', as: 'admin_user'
   get 'search' => 'posts#search', as: 'search'
+  get '/feeds' => 'posts#feed', as: 'feeds'
   
   resources :categories, only: [:index, :show]
   resources :posts, only: [:index, :show]

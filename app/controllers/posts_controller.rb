@@ -10,4 +10,12 @@ class PostsController < ApplicationController
   def search
     @posts = Post.published.search(params[:q]).page params[:page]
   end
+  
+  def feed
+    @posts = Post.all(select: "title, content, created_at, slug")
+    
+    respond_to do |format|
+      format.rss { render layout: false }
+    end
+  end
 end
