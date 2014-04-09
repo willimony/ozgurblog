@@ -1,7 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+blog:
+  name: Blog
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+siir:
+  name: Şiir

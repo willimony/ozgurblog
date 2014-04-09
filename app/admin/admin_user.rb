@@ -20,7 +20,6 @@ ActiveAdmin.register AdminUser do
       f.input :email
       f.input :image_url
       f.input :username
-      f.input :slug
       f.input :password
       f.input :password_confirmation
     end

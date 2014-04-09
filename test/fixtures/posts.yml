@@ -1,9 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+published_post_one:
+  title: Başım köpük köpük bulut, içim dışım deniz
+  content: Başım köpük köpük bulut, içim dışım deniz
+  category_id: 1
+  admin_user_id: 1
+  published: 1
+  
 
-one:
-  title: MyString
-  content: MyText
-
-two:
+unpublished_post_one:
   title: MyString
   content: MyText

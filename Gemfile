@@ -31,6 +31,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :test do
+  gem 'simplecov', '~> 0.7.1', require: false
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
