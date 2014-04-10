@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h3><%= link_to @post.title, @post %></h3>
-		<h5><%= @post.created_at.to_s(:rfc822) %></h5>
+		<h5><%= time_ago_in_words(@post.created_at.to_s(:rfc822)) %> önce gönderildi.</h5>
 	</div>
 
 	<div class="panel-body">

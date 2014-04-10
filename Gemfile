@@ -16,9 +16,8 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'RedCloth'
 
-#gem 'sorcery', '~> 0.8.5'
 
-#gem 'sqlite3'
+gem 'sqlite3'
 
 
 group :doc do
@@ -34,15 +33,3 @@ end
 group :test do
   gem 'simplecov', '~> 0.7.1', require: false
 end
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
