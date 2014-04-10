@@ -9,15 +9,6 @@
 	</thead>
 	
 	<tbody>
-		<% @categories.each do |c| %>
-			<tr>
-				<td>
-					<%= link_to c.name, c %>	
-				</td>
-				<td>
-					<%= c.posts.published.count %>
-				</td>
-			</tr>
-		<% end %>
+	  <%= render @categories %>
 	</tbody>
 </table>
