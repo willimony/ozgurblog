@@ -17,7 +17,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'RedCloth'
 
 
-gem 'sqlite3'
+#gem 'sqlite3'
 
 
 group :doc do
