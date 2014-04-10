@@ -1,8 +1,9 @@
 class Category < ActiveRecord::Base
+  default_scope -> { order :name }
+  
   has_many :posts, dependent: :destroy
   
-  validates_presence_of :name
-  validates_uniqueness_of :name
-  
-  default_scope order: 'name'
+  validates :name,
+            presence: true,
+            uniqueness: true
 end
