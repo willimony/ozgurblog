@@ -5,15 +5,13 @@
 	</div>
 
 	<div class="panel-body">
-		<%= RedCloth.new(@post.content).to_html.html_safe %>
+		<%= markdown(@post.content) %>
 	</div>
 
 	<div class="panel-footer">
 		<%= render 'layouts/fb_sharer' %>
 	</div>
 </div>
-
-
 
 <% content_for :post_author do %>
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">

@@ -1,13 +1,11 @@
 class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders]
-    
-  before_save :remove_html_tags
-  
+
   default_scope -> { order('created_at desc') }
   scope :published, -> { where(published: :t) }
 
-  paginates_per 8
+  paginates_per 5
   
   belongs_to :category
   belongs_to :admin_user
@@ -19,9 +17,4 @@ class Post < ActiveRecord::Base
   def self.search q
     self.where("title like ? or content like ?", "%#{q}%", "%#{q}%")
   end
-  
-  private
-    def remove_html_tags
-      self.content = HTML::FullSanitizer.new.sanitize(self.content)
-    end
 end
