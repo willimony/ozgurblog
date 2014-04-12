@@ -3,7 +3,8 @@ tr:
     errors:
       messages:
         blank: 'alanı boş bırakılamaz'
-
+        record_invalid: 'kayıt hatalı'
+        
     models:
       comment:
         one: 'Admin panel yorumu'

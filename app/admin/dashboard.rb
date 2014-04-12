@@ -5,7 +5,31 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc{ I18n.t("active_admin.dashboard") } do
      columns do
        column do
-         strong { link_to 'Yazılarda kalın, italic ve diğerleri için ->', 'http://redcloth.org/' }
+         simple_format """
+yazıların formatı için
+beni oku :)
+======================
+
+başlık için # başlık
+italik yazmak için *bu bir italik yazı*
+  ayrıca italik yazmak için _ de kullanılabilir
+  _bu da bir italik yazı_
+kalın yazmak için **bu kalın bir yazı**
+
+resimler için
+![](koyulacak resmin URL adresi)
+örn:
+  ![](http://upload.wikimedia.org/wikipedia/commons/b/bb/Kropotkin1.jpg)
+
+listeler için
+* elma
+* armut
+* kalem
+
+sıralı liste için
+1. ali
+2. veli
+3. deli"""
        end
        
        column do

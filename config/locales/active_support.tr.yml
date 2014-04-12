@@ -7,7 +7,7 @@ tr:
       
       default: "%Y-%m-%d"
       short: "%b %d"
-      long: "%B %d, %Y"
+      long: "%d %B, %Y"
 
     day_names: [Pazar, Pazartesi, Salı, Çarşamba, Perşembe, Cuma, Cumartesi]
     abbr_day_names: [Paz, Pzt, Sal, Çrş, Prş, Cum, Cts]
@@ -25,9 +25,10 @@ tr:
 
   time:
     formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
+      default: "%A, %d %B %Y %H:%M"
       short: "%d %b %H:%M"
       long: "%B %d, %Y %H:%M"
+
     am: "öğleden önce"
     pm: "öğleden sonra"
 
