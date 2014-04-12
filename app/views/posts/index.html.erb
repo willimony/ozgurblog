@@ -6,7 +6,7 @@
       <%= link_to post.admin_user.username, post.admin_user %>
     </p>
     
-    <%= markdown(post.content).truncate(1500).html_safe %>
+    <%= markdown(post.content).truncate(1500, omission: (link_to ' devamı için tık', post)).html_safe %>
   </div>
 <% end %>
 
