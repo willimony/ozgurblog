@@ -1,12 +1,12 @@
 <% @posts.each do |post| %>
   <div class="blog-post">
-    <h2 class="blog-post-title"><%= post.title %></h2>
+    <h2 class="blog-post-title"><%= link_to post.title, post %></h2>
     <p class="blog-post-meta">
       <%= post.created_at.to_s(:rfc822) %>
       <%= link_to post.admin_user.username, post.admin_user %>
     </p>
     
-    <%= truncate(markdown(post.content), length: 500, omission: '...') %>
+    <%= truncate(markdown(post.content), length: 500, omission: '...').html_safe %>
   </div>
 <% end %>
 
