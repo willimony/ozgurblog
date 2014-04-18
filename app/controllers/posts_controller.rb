@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
   
   def feeds
-    @posts = Post.all(select: "title, content, created_at, user")
+    @posts = Post.all(select: "title, content, created_at")
     
     respond_to do |format|
       format.rss { render layout: false }

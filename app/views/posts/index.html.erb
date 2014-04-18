@@ -1,6 +1,8 @@
 <% @posts.each do |post| %>
   <div class="blog-post">
-    <h2 class="blog-post-title"><%= link_to post.title, post %></h2>
+    <h2 class="blog-post-title">
+    	<%= link_to post.title, post %>
+    </h2>
     <p class="blog-post-meta">
       <%= I18n.l post.created_at %>
       <%= link_to post.user.full_name, post.user %>

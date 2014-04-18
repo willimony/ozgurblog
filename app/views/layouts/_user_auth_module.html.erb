@@ -1,33 +1,45 @@
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-	<div class="sidebar-module sidebar-module-inset">
+	<div class="panel panel-warning">
+
 		<% if user_signed_in? %>
-			<h4>hoşgeldin, <%= current_user.full_name %></h4>
+			<div class="panel-heading">
+				<h1 class="panel-title">hoşgeldin, <%= current_user.full_name %></h1>
+			</div>
 
-			<ol class="list-unstyled">
-				<li>
-					<%= link_to 'çıkış yap', destroy_user_session_path, method: :DELETE %>
-				</li>
+			<div class="panel-body">
+				<ol class="list-unstyled">
+					<li>
+						<%= link_to 'çıkış yap', destroy_user_session_path, method: :DELETE %>
+					</li>
 
-				<li>
-					<%= link_to 'yeni yazı ekle', new_post_path %>
-				</li>
+					<li>
+						<%= link_to 'yeni yazı ekle', new_post_path %>
+					</li>
 
-				<li>
-					<%= link_to 'profilim', current_user %>
-				</li>
+					<li>
+						<%= link_to 'profilim', current_user %>
+					</li>
 
-				<li>
-					<%= link_to 'profilimi düzenle', edit_user_registration_path %>
-				</li>
-			</ol>
+					<li>
+						<%= link_to 'profilimi düzenle', edit_user_registration_path %>
+					</li>
+				</ol>
+			</div>
+
 		<% else %>
-			<h4>selam yabancı</h4>
-			<ol class="list-unstyled">
-				<li>
-					<%= link_to 'giriş yap', new_user_session_path %></li>
-				</li>
-				<li><%= link_to 'kayıt ol', new_user_registration_path %></li>
-			</ol>
+			<div class="panel-heading">
+				<h1 class="panel-title">selam yabancı</h1>
+			</div>
+			
+			<div class="panel-body">
+				<ol class="list-unstyled">
+					<li>
+						<%= link_to 'giriş yap', new_user_session_path %></li>
+					</li>
+					<li><%= link_to 'kayıt ol', new_user_registration_path %></li>
+				</ol>
+			</div>
 		<% end %>
+
 	</div>
 </div>

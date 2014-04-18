@@ -1,0 +1,7 @@
+<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+	<%= form_tag(search_posts_path, method: :get, role: :search) do %>
+	  <div class="form-group">
+	    <%= search_field_tag :q, params[:q], placeholder: 'ara', class: 'form-control' %>
+	  </div>
+	<% end %>
+</div>
