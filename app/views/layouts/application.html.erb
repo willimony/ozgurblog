@@ -8,6 +8,8 @@
     <meta name="author" content="">
 
     <%= auto_discovery_link_tag(:rss, feeds_posts_url) %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    
     <title>
       <%= yield(:page_title).present? ? yield(:page_title) : "Özgür Duvar!" %>
     </title>
