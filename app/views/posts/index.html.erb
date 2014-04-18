@@ -3,7 +3,7 @@
     <h2 class="blog-post-title"><%= link_to post.title, post %></h2>
     <p class="blog-post-meta">
       <%= I18n.l post.created_at %>
-      <%= link_to post.admin_user.username, post.admin_user %>
+      <%= link_to post.user.full_name, post.user %>
     </p>
     
     <%= markdown(post.content).truncate(1500, omission: (link_to ' devamı için tık', post)).html_safe %>

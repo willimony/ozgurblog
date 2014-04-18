@@ -1,0 +1,54 @@
+<%= content_for :page_title, @user.full_name %>
+
+<div>
+	<h1><%= @user.full_name %></h1>
+	<hr />
+
+	<table class="table">
+		<% if current_user && current_user == @user %>
+			<thead>
+				<tr>
+					<th>başlık</th>
+					<th>kategori</th>
+					<th>yayınlandı?</th>
+					<th>&nbsp;</th>
+					<th>&nbsp;</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<% @posts.each do |post| %>
+					<tr>
+						<td><%= link_to post.title, post %></td>
+						<td><%= link_to post.category.name, post.category %></td>
+						
+						<td>
+							<% if post.published %>
+								<span class="label label-success">evet</span>
+							<% else %>
+								<span class="label label-danger">hayır</span>
+							<% end %>
+						</td>
+
+						<td><%= link_to 'düzenle', edit_post_path(post), class: 'btn btn-warning' %></td>
+						<td><%= link_to 'sil', posts_path(post), method: :DELETE, data: {confirm: 'emin misin?' }, class: 'btn btn-danger' %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		<% else %>
+			<thead>
+				<tr>
+					<th>Başlık</th>
+					<th>Kategori</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @posts.published.each do |post| %>
+					<tr>
+						<td><%= link_to post.title, post %></td>
+						<td><%= link_to post.category.name, post.category %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		<% end %>
+	</table>
+</div>

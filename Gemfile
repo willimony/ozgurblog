@@ -29,12 +29,12 @@ group :production do
 end
 
 group :test, :development do
-#  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails', '~> 2.0'
   gem 'simplecov', '~> 0.7.1', require: false
-#  gem 'capybara'
-#  gem 'launchy'
-#  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
 #  gem 'guard-rspec'
-#  gem 'cucumber-rails', :require => false
-#  gem 'database_cleaner'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end

@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <%= auto_discovery_link_tag(:rss, feeds_url) %>
-    <title>Özgür Duvar!</title>
-    
+
+    <%= auto_discovery_link_tag(:rss, feeds_posts_url) %>
+    <title>
+      <%= yield(:page_title).present? ? yield(:page_title) : "Özgür Duvar!" %>
+    </title>
+
+    <%= stylesheet_link_tag 'http://getbootstrap.com/dist/css/bootstrap.min.css' %>
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
@@ -22,8 +26,6 @@
     ga('create', 'UA-49963564-1', 'ozgurduvar.herokuapp.com');
     ga('send', 'pageview');
   </script>
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -33,51 +35,34 @@
   </head>
 
   <body>
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-			<%= render 'layouts/nav_bar_links' %>
-        </nav>
-      </div>
-    </div>
+    <%= render 'layouts/nav_bar' %>
 
     <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title">Özgür Duvar!</h1>
-        <p class="lead blog-description">Trakya Üniversitesi Forumu'ndan...</p>
-      </div>
-
+      <br>
       <div class="row">
-
         <div class="col-sm-8 blog-main">
-        	<% if notice %>
-			<div class="alert alert-success">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				
-				<%= notice %>
-			</div>
-			<% end %>
-		  <%= yield %>
+          <%= render 'layouts/messages' %>
+		      <%= yield %>
         </div>
 
-		<%= yield :post_author %>
-		
- 		<%= render 'layouts/search_module' %>
- 		<%= render 'layouts/links_module' %>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <%= form_tag(search_posts_path, method: :get, role: :search) do %>
+              <div class="form-group">
+                <%= search_field_tag :q, params[:q], placeholder: 'yazı ara', class: 'form-control' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
 
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
-    <div class="blog-footer">
-      <p><i>Özgür Duvar!</i> bir özgür yazılımdır. Daha fazlası için <%= link_to 'github repo', 'https://github.com/yigitsadic/ozgurblog' %></p>
-      <center>
-      	<%= link_to(image_tag('rss-icon.png'), feeds_path(:format => :rss)) %>
-      </center>
+        <%= render 'layouts/user_auth_module' %>
+		    <%= yield :post_actions %>
+      </div>
     </div>
+
+    <%= render 'layouts/footer' %>
     
-	<%= javascript_include_tag "application" %>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>	
+	  <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag 'http://getbootstrap.com/dist/js/bootstrap.min.js' %>
   </body>
 </html>

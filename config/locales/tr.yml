@@ -15,8 +15,12 @@ tr:
         other: 'Mesajlar'
         
       admin_user:
-        one: 'Kullanıcı'
-        other: 'Kullanıcılar'
+        one: 'Admin kullanıcısı'
+        other: 'Admin kullanıcıları'
+
+      user:
+        one: 'Yazar'
+        other: 'Yazarlar'
         
       category:
         one: 'Kategori'
@@ -47,12 +51,17 @@ tr:
         name: 'İsim'
         
       admin_user:
-        username: 'Kullanıcı adı'
         password: 'Parola'
-        image_url: 'Profil resmi adresi. (Sadece JPG, PNG ve GIF uzantılı)'
         password_confirmation: 'Parola doğrulama'
         created_at: 'Oluşturulma tarihi'
         updated_at: 'Güncellenme tarihi'
+
+      admin_user:
+        full_name: 'İsim'
+        password: 'Parola'
+        password_confirmation: 'Parola doğrulama'
+        created_at: 'Oluşturulma tarihi'
+        updated_at: 'Güncellenme tarihi'  
       
 
   active_admin:

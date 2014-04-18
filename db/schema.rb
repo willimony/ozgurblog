@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403193141) do
+ActiveRecord::Schema.define(version: 20140418160829) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -29,14 +29,12 @@ ActiveRecord::Schema.define(version: 20140403193141) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
 
   create_table "admin_users", force: true do |t|
-    t.string   "email",                  default: "",                                                                                                null: false
-    t.string   "encrypted_password",     default: "",                                                                                                null: false
-    t.string   "username",               default: "",                                                                                                null: false
-    t.string   "image_url",              default: "https://scontent-a-lhr.xx.fbcdn.net/hphotos-ash3/t1.0-9/1384365_511392242283665_322222789_n.jpg", null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,                                                                                                 null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -64,13 +62,31 @@ ActiveRecord::Schema.define(version: 20140403193141) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
-    t.string   "slug"
     t.text     "content"
     t.boolean  "published"
     t.integer  "category_id"
-    t.integer  "admin_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "full_name"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
