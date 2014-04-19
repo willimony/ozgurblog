@@ -3,8 +3,8 @@ tr:
     pagination:
       first: "&laquo; İlk"
       last: "Son &raquo;"
-      previous: "Geri"
-      next: "İleri"
+      previous: "önceki sayfa"
+      next: "sonraki sayfa"
       truncate: "&hellip;"
  
   helpers:

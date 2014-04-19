@@ -10,6 +10,13 @@ tr:
       not_saved: "maalesef kayıt olurken şu hatalar oluştu:"
  
   devise:
+    models:
+      user:
+        full_name: 'tam isim'
+        email: 'email'
+        password: 'parola'
+        password_confirmation: 'parola onaylama'
+        
     failure:
       already_authenticated: 'zaten giriş yaptın :)'
       unauthenticated: 'devam etmeden önce giriş yapman veya kayıt olman gerekmekte'

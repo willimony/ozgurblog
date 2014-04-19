@@ -1,11 +1,13 @@
+<%= paginate @posts %>
+
 <% @posts.each do |post| %>
   <div class="blog-post">
     <h2 class="blog-post-title">
     	<%= link_to post.title, post %>
+      <small><%= link_to post.user.full_name, post.user %></small>
     </h2>
     <p class="blog-post-meta">
-      <%= I18n.l post.created_at %>
-      <%= link_to post.user.full_name, post.user %>
+      <span class="label label-default"><%= I18n.l post.created_at %></span>
     </p>
     
     <%= markdown(post.content).truncate(1500, omission: (link_to ' devamı için tık', post)).html_safe %>

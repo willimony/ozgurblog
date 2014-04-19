@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   default_scope -> { order('created_at desc') }
   scope :published, -> { where(published: :t) }
 
-  paginates_per 4
+  paginates_per 5
   
   belongs_to :category
   belongs_to :user

@@ -1,8 +1,7 @@
-
 <%= form_for @message, role: 'form' do |f| %>
 	<% if @message.errors.any? %>
 		<div class="alert alert-danger">
-			<h3><%= @message.errors.count %> hatadan dolayı mesajınız gönderilemedi:</h3>
+			<h3><%= @message.errors.count %> hatadan dolayı mesajın gönderilemedi:</h3>
       
       <ul>
       	<% @message.errors.full_messages.each do |msg| %>

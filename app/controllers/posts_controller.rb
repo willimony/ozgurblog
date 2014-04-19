@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     
     if @post.save
-      redirect_to :back, notice: 'yazı başarı ile gönderildi.'
+      redirect_to @post, notice: 'yazı başarı ile gönderildi.'
     else
       render 'new'
     end

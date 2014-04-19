@@ -4,6 +4,7 @@ tr:
       messages:
         blank: 'alanı boş bırakılamaz'
         record_invalid: 'kayıt hatalı'
+        taken: 'alanı daha önce kullanılmış, lütfen başka dene'
         
     models:
       comment:
@@ -19,6 +20,12 @@ tr:
         other: 'Admin kullanıcıları'
 
       user:
+        full_name: 'tam isim'
+        email: 'email'
+        password: 'parola'
+        password_confirmation: 'parola onaylama'
+
+      user:
         one: 'Yazar'
         other: 'Yazarlar'
         
@@ -32,23 +39,23 @@ tr:
         
     attributes:
       message:
-        title: 'Başlık'
-        content: 'Mesaj'
-        email: 'Email'
+        title: 'başlık'
+        content: 'mesaj'
+        email: 'email'
         created_at: 'Oluşturulma tarihi'
         
       post:
-        title: 'Başlık'
-        content: 'İçerik'
-        slug: 'Slug URL'
-        published: 'Herkese görünür?'
-        category: 'Kategori'
-        admin_user: 'Yazar'
-        created_at: 'Oluşturulma tarihi'
-        updated_at: 'Güncellenme tarihi'
+        title: 'başlık'
+        content: 'içerik'
+        published: 'yayınlandı mı?'
+        category: 'kategori'
+        category_id: 'kategori'
+        user: 'yazar'
+        created_at: 'pluşturulma tarihi'
+        updated_at: 'güncellenme tarihi'
         
       category:
-        name: 'İsim'
+        name: 'isim'
         
       admin_user:
         password: 'Parola'

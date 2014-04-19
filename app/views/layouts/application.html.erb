@@ -49,8 +49,10 @@
         </div>
 
         <%= render 'layouts/search_module' %>
+        <%= yield :pagination %>
         <%= render 'layouts/user_auth_module' %>
 		    <%= yield :post_actions %>
+        
       </div>
     </div>
 
