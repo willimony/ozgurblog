@@ -7,5 +7,7 @@
 ## Yapılacaklar
 
 * Testler
+* Galeri
+* Belgeler 
 * Daha iyi bir arama deneyimi
 * Daha iyi bir arayüz
